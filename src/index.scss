@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+
+// color variables
+$dark-blue: hsl(233, 26%, 24%);
+$lime-green: hsl(136, 65%, 51%);
+$bright-cyan: hsl(192, 70%, 51%);
+
+$grayish-blue: hsl(233, 8%, 62%);
+$light-grayish-blue: hsl(220, 16%, 96%);
+$very-light-gray: hsl(0, 0%, 98%);
+$white: white;
+
+// resets
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+button {
+  outline: none;
+  font-family: "Public Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  font-family: "Public Sans", sans-serif;
+  overflow-x: hidden;
+}
+nav {
+  animation: navbar 4s;
+}
+@keyframes navbar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  padding: 1.5rem;
+
+}
+.logo {
+  width: 10rem;
+}
+.nav-btn {
+  background: transparent;
+}
+.nav-open {
+  font-size: 2rem;
+}
+.nav-close {
+  font-size: 2rem;
+}
+.nav-container {
+  position: absolute;
+  // inset: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), $white);
+  padding: 2rem 2.5rem;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  // visibility: hidden !important;
+  transition: all 0.2s ease-in-out;
+
+  ul {
+    background-color: $white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 1rem;
+
+    li {
+      padding: 0.8rem;
+
+      a {
+        color: $dark-blue;
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: 1.1rem;
+        position: relative;
+      }
+      a::after {
+        content: "";
+        background-color: $lime-green;
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        opacity: 0.6;
+        transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+      }
+    }
+  }
+}
+.btn-desktop {
+  background-image: linear-gradient(to right, $lime-green, $bright-cyan);
+  color: $white;
+  font-size: 1rem;
+  padding: 14px;
+  border-radius: 2rem;
+  width: 12rem;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+.show-nav {
+  transform: scale(1);
+  visibility: visible !important;
+  // transition: transform 0.2s ease-in-out;
+}
+.flex-1{
+  animation: 0.5s  fadeIn;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.mockups::before {
+  content: "";
+  background: url(./assets/images/bg-intro-mobile.svg) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+}
+.mockups-img {
+  max-width: 100%;
+  margin-top: -15rem;
+  position: relative;
+  z-index: -1;
+}
+.registration-section {
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem 2rem;
+
+  h1 {
+    color: $dark-blue;
+    font-size: 2.5rem;
+    font-weight: 400;
+    padding-bottom: 0.8em;
+  }
+  p {
+    line-height: 1.5;
+    color: $grayish-blue;
+    padding-bottom: 0.8em;
+    max-width: 550px;
+  }
+  button {
+    background-image: linear-gradient(to right, $lime-green, $bright-cyan);
+    color: $white;
+    font-size: 1rem;
+    padding: 14px;
+    border-radius: 2rem;
+    width: 10rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+}
+.reasons-section {
+  background-color: $light-grayish-blue;
+  text-align: center;
+  margin: 4rem 0;
+  padding: 2rem;
+  img {
+    margin: 1rem 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $dark-blue;
+    padding-bottom: 1rem;
+  }
+
+  p {
+    color: $grayish-blue;
+    padding-bottom: 1rem;
+    line-height: 1.5;
+  }
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $dark-blue;
+    padding-bottom: 1rem;
+  }
+}
+
+.blog {
+  padding: 0 2rem;
+  background-color: $light-grayish-blue;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: $dark-blue;
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+  .news-articles {
+
+    article {
+      background-color: $white;
+    }
+    img {
+      max-width: 100%;
+      // height: ;
+      border-top-left-radius: 8px ;
+      border-top-right-radius: 8px ;
+    }
+    .news-title {
+      padding: 1.5rem 2rem;
+    }
+
+    small {
+      display: block;
+      padding: 0.8rem 0;
+      color: $grayish-blue;
+    }
+    h3 {
+      padding: 0.5em 0;
+      color: $dark-blue;
+      transition: color 0.2s ease-in;
+    }
+    p {
+      line-height: 1.5;
+      color: $grayish-blue;
+    }
+  }
+}
+.easybank-footer {
+  background-color: $dark-blue;
+  text-align: center;
+  padding: 2rem;
+
+  button {
+    background-image: linear-gradient(to right, $lime-green, $bright-cyan);
+    color: $white;
+    font-size: 1rem;
+    padding: 14px;
+    border-radius: 2rem;
+    width: 10rem;
+    text-align: center;
+    margin: 0.7em 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in ;
+  }
+  button:hover {
+    background: transparent;
+    border: 2px solid;
+    
+  }
+  .footer-links {
+    padding-bottom: 1rem;
+
+    li {
+      padding: 5px 0;
+    }
+    a {
+      color: $very-light-gray;
+      transition: color 0.2s ease-in;
+    }
+  }
+  .copyright {
+    color: $grayish-blue;
+  }
+}
+.socials {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+
+  .social-media {
+    transition: color 0.2s ease-in;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    padding-inline: 2rem;
+  }
+  .nav-container {
+    position: relative;
+    background-image: none;
+    padding: 0;
+    transform: scale(1);
+    visibility: visible;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+
+      li {
+        a:hover::after {
+          width: 100%;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+  .nav-btn {
+    display: none;
+  }
+  .btn-desktop {
+    display: block;
+    margin-right: 1.5rem;
+    transition: all 0.25s ease-in
+  }
+  .btn-desktop:hover {
+    opacity: .7;
+  }
+  .mockups::before {
+    background: none;
+    display: none;
+  }
+  .flex-1 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .mockups::after {
+    content: "";
+    background: url(./assets/images/bg-intro-desktop.svg) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: -2;
+    top: 0;
+    right: 0;
+  }
+
+  .registration-section {
+    text-align: left;
+    h1 {
+      font-size: 3rem;
+      max-width: 550px;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    button:hover {
+      opacity: 0.6;
+    }
+  }
+  .reasons-section {
+    text-align: left;
+    padding: 1rem 3.5rem;
+    margin: 0;
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    p {
+      max-width: 800px;
+      line-height: 1.8;
+    }
+
+    .reasons-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      article {
+        max-width: 300px;
+      }
+    }
+  }
+  .blog {
+    padding: 1.5rem 3.5rem;
+
+    h2 {
+      text-align: left;
+    }
+    .news-articles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+
+      h3:hover {
+        color: $lime-green;
+        cursor: pointer;
+      }
+    }
+  }
+  .easybank-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline: 3.5rem;
+
+    .footer-links {
+      text-align: left;
+
+      a:hover {
+        color: $lime-green;
+      }
+    }
+    button:hover {
+      opacity: 1;
+    }
+  }
+  .social-media:hover {
+    color: $lime-green;
+  }
+}
