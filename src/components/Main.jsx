@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 
 const Main = () => {
   AOS.init({
-    offset: 200,
+    offset: 150,
   });
   return (
     <div>

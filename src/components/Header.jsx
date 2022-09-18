@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import gsap from 'gsap';
 
@@ -8,21 +8,26 @@ import logo from '../assets/images/logo.svg';
 
 const Header = () => {
     const [showNav, setShowNav] = useState(false);
-    const navRef = useRef(null)
+  const [scroll, setScroll] = useState(window.pageYOffset)
+  
+    const checkScroll = ()=>{
+      setScroll(window.pageYOffset)
+     
+    }
 
-// useEffect(()=>{
-//     gsap.fromTo(navRef.current, {
-//         autoAlpha: 0,
-//     },{
-//         duration: 1,
-//         autoAlpha: 1,
-//         ease: 'none',
-//     })
-// },[])
+    useEffect(()=>{
+      window.addEventListener('scroll', checkScroll)
+      if(scroll > 400){
+        setShowNav(false)
+      }
+      return ()=>{
+        window.removeEventListener('scroll', checkScroll) 
+      }
+    })
 
   return (
     <div>
-       <nav id='home' ref={navRef} >
+       <nav id='home' >
         <div className="nav-header">
         <img src={logo} alt="easybank" className='logo'/>
         <button className='nav-btn' onClick={()=>setShowNav(!showNav)}>
