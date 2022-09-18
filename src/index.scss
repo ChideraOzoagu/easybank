@@ -37,11 +37,12 @@ body {
   background-color: $very-light-gray;
 }
 nav {
-  animation: navbar 4s;
+  animation: navbar 1s;
 }
 @keyframes navbar {
   from {
     opacity: 0;
+    transform: translateY(-100%);
   }
   to {
     opacity: 1;
@@ -53,11 +54,11 @@ nav {
   justify-content: space-between;
   background-color: $white;
   padding: 1.5rem;
-
 }
 .logo {
   width: 10rem;
 }
+
 .nav-btn {
   background: transparent;
 }
@@ -123,11 +124,10 @@ nav {
 }
 .show-nav {
   transform: scale(1);
-  visibility: visible !important;
-  // transition: transform 0.2s ease-in-out;
+  visibility: visible ;
 }
-.flex-1{
-  animation: 0.5s  fadeIn;
+.flex-1 {
+  animation: 0.5s fadeIn;
 }
 @keyframes fadeIn {
   from {
@@ -222,7 +222,6 @@ nav {
     text-align: center;
   }
   .news-articles {
-
     article {
       background-color: $white;
     }
@@ -230,8 +229,8 @@ nav {
       width: 100%;
       max-height: 12rem;
       object-fit: cover;
-      border-top-left-radius: 8px ;
-      border-top-right-radius: 8px ;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
     }
     .news-title {
       padding: 1.5rem 2rem;
@@ -268,12 +267,11 @@ nav {
     text-align: center;
     margin: 0.7em 0;
     cursor: pointer;
-    transition: background-color 0.3s ease-in ;
+    transition: background-color 0.3s ease-in;
   }
   button:hover {
     background: transparent;
     border: 2px solid;
-    
   }
   .footer-links {
     padding-bottom: 1rem;
@@ -312,7 +310,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     background-color: $white;
-    padding-inline: 2rem;
+    padding-inline: 2rem 3.5rem;
     // position: fixed;
     // width: 100%;
   }
@@ -342,10 +340,10 @@ nav {
   .btn-desktop {
     display: block;
     margin-right: 1.5rem;
-    transition: all 0.25s ease-in
+    transition: all 0.25s ease-in;
   }
   .btn-desktop:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
   .mockups::before {
     background: none;
@@ -368,7 +366,7 @@ nav {
     top: 0;
     right: -150px;
   }
-  .mockups-img{
+  .mockups-img {
     right: -200px;
   }
 

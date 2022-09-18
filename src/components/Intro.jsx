@@ -3,20 +3,11 @@ import mockups from "../assets/images/image-mockups.png";
 import gsap from 'gsap';
 
 const Intro = () => {
-const introRef = useRef(null)
 
-// useEffect(()=>{
-//     gsap.fromTo(introRef.current, {
-//         autoAlpha: 0,
-//     }, {
-//         duration: 2,
-//         ease: 'none',
-//         autoAlpha: 1,
-//     })
-// },[])
+
   return (
     <div>
-       <div className="flex-1" ref={introRef}>
+       <div className="flex-1" >
         <section className="mockups">
           <img src={mockups} alt="mockups" className="mockups-img" />
         </section>
