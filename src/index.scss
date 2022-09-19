@@ -129,14 +129,14 @@ nav {
 .flex-1 {
   animation: 0.5s fadeIn;
 }
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
 .mockups::before {
   content: "";
   background: url(./assets/images/bg-intro-mobile.svg) no-repeat;
@@ -146,6 +146,9 @@ nav {
   height: 100%;
   z-index: -1;
   top: 0;
+}
+.intro-desktop{
+  display: none;
 }
 .mockups-img {
   max-width: 100%;
@@ -346,7 +349,6 @@ nav {
     opacity: 0.7;
   }
   .mockups::before {
-    background: none;
     display: none;
   }
   .flex-1 {
@@ -355,16 +357,29 @@ nav {
     align-items: center;
     justify-content: space-evenly;
   }
-  .mockups::after {
-    content: "";
-    background: url(./assets/images/bg-intro-desktop.svg) no-repeat;
-    background-size: 100%;
+  .mockups {
+    position: relative;
+   
+  }
+  // .mockups::after {
+  //   content: "";
+  //   background: url(./assets/images/bg-intro-desktop.svg) no-repeat;
+  //   background-size: 100%;
+  //   position: absolute;
+  //   width: 55%;
+  //   height: 100%;
+  //   z-index: -2;
+  //   top: 0;
+  //   // margin-right: -150px;
+  //   right: 0;
+  // }
+  .intro-desktop {
+    display: block;
     position: absolute;
-    width: 55%;
-    height: 100%;
-    z-index: -2;
+    width: 100%;
     top: 0;
-    right: -150px;
+    right: -130px;
+    z-index: -2;
   }
   .mockups-img {
     right: -200px;
